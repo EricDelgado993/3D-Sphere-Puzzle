@@ -14,6 +14,11 @@ This Unity project is a dynamic and engaging 3D puzzle game where players contro
 
 ---
 
+## Screenshots
+!(https://github.com/EricDelgado993/3D-Sphere-Puzzle/blob/main/Screenshots/screen1.png)
+
+---
+
 ## Features
 
 ### Core Gameplay
