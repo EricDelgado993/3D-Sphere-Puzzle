@@ -1,7 +1,7 @@
 # 3D Sphere Puzzle Game
 
 ## Overview
-This Unity project is a dynamic 3D puzzle game where the player controls a gold sphere, navigating a colorful grid of tiles and avoiding obstacles. The objective is to turn all blue tiles green while avoiding pitfalls, hazards, and enemies. The game combines puzzle-solving with platformer mechanics to challenge the player's spatial awareness and precision.
+This Unity project is a dynamic and engaging 3D puzzle game where players control a gold sphere to navigate a grid of colorful tiles. The objective is to turn all blue tiles green by rolling over them while avoiding hazards and enemies. The game features a score system, realistic physics, and interactive mechanics to challenge players' skills.
 
 ---
 
@@ -9,64 +9,67 @@ This Unity project is a dynamic 3D puzzle game where the player controls a gold 
 
 ### Core Gameplay
 - **Player Control:** 
-  - Move the gold sphere using the arrow keys (`Up`, `Down`, `Left`, `Right`).
-  - The sphere rolls across the level with realistic physics-based movement.
+  - Use arrow keys (`Up`, `Down`, `Left`, `Right`) to control the sphere's movement.
+  - Rolling physics implemented for realistic interaction with the environment.
 
 ### Tile Interactions
 - **Blue Tiles:** 
-  - Turn green when the sphere rolls over them, earning the player +100 points per tile.
+  - Turn green when rolled over, adding +100 points to the score.
+  - All tiles must be turned green to win.
 - **Green Tiles:** 
-  - Indicate progress; no additional interaction.
+  - Indicate progress; turning all blue tiles green triggers the win condition.
 - **Brown Tiles (Pitfalls):** 
-  - Disappear when the sphere rolls over them, creating a pit. Falling into a pit ends the game.
+  - Disappear when touched, creating a pit.
+  - Falling into a pit results in game over.
 - **Purple Tiles (Springs):** 
-  - Launch the sphere into the air upon contact. The sphere may land back on the map or fall out of bounds, resulting in game over.
+  - Launch the sphere into the air when stepped on.
+  - May cause the sphere to land back on the map or fall out of bounds, resulting in game over.
 
-### Enemy Interaction
-- **Moving Cylinder:** 
-  - Acts as an enemy that moves vertically across the map.
+### Enemy and Hazards
+- **Enemy Cylinder (vEnemy):**
+  - Moves vertically across the map.
   - Contact with the cylinder results in game over.
+- **Arena Bounds:**
+  - Falling out of bounds ends the game.
+  - Managed by the `GameManager` script, which checks the player's position relative to the arena's bounds.
 
-### Win/Lose Conditions
-- **Win:** 
-  - Turn all blue tiles into green tiles to complete the level and display a congratulatory message.
-- **Lose:** 
-  - Fall into a pit or out of bounds.
-  - Make contact with the moving cylinder enemy.
+### Game Manager Features
+- **Score System:** 
+  - Tracks and displays the score in real time.
+  - Adds +100 points for each blue tile turned green.
+  - Triggers the win condition at a score of 3600 points.
+- **Win Condition:** 
+  - Displays a "Congratulations" message and disables player controls when all tiles are green.
+- **Restart Mechanism:** 
+  - Automatically restarts the level when the player falls out of bounds or makes contact with a hazard/enemy.
 
-### UI and Feedback
+### Scripts and Mechanics
+- **GameManager.cs:**
+  - Central script managing the game state, score, and win conditions.
+- **PlayerController.cs:**
+  - Handles player movement and collision detection.
+  - Applies vertical force on purple tiles and restarts the level upon falling out of bounds.
+- **Stable.cs:**
+  - Changes tile color to green upon collision with the player and invokes the score update in `GameManager`.
+- **PitFall.cs:**
+  - Removes brown tiles upon collision with the player.
+- **vEnemy.cs:**
+  - Controls enemy cylinder's movement, creating a dynamic obstacle.
+
+### Visual and UI Features
 - **Score Display:** 
-  - Real-time score updates based on converted blue tiles (+100 points per tile).
-- **Game Over Screen:** 
-  - Appears when the player loses, indicating the cause of failure.
-- **Victory Screen:** 
-  - Displays a congratulatory message when all blue tiles are green.
-
----
-
-## Development Details
-- **Engine:** Unity
-- **Physics:** Unity's Rigidbody physics for realistic sphere movement.
-- **Level Design:** 
-  - A grid-based map with varying tile types for strategic navigation.
-  - A moving enemy to add dynamic difficulty.
-- **UI:** 
-  - On-screen score tracker.
-  - Game over and victory messages.
+  - Real-time score updates displayed on the screen.
+- **Win Message:** 
+  - Displays "Congratulations" upon winning.
+- **Hazard Effects:**
+  - Realistic physics for pitfalls and springs.
+  - Vibrant tile color changes to indicate progress.
 
 ---
 
 ## How to Play
-1. Launch the game and control the sphere using the arrow keys.
-2. Roll over blue tiles to turn them green and increase your score.
-3. Avoid pitfalls (brown tiles), stay on the map, and avoid the moving cylinder enemy.
-4. Use purple tiles strategically to navigate the level but beware of falling out of bounds.
-5. Turn all blue tiles into green to win the game!
-
----
-
-## Future Enhancements
-- Add new levels with increasing difficulty.
-- Introduce timed challenges for an added layer of difficulty.
-- Implement collectibles or power-ups for enhanced gameplay mechanics.
-- Add customizable themes for tile and sphere appearances.
+1. Control the gold sphere using the arrow keys.
+2. Roll over blue tiles to turn them green and score points.
+3. Avoid hazards like pitfalls, springs, and the moving enemy cylinder.
+4. Stay within the arena bounds to avoid falling out of the map.
+5. Turn all blue tiles green to win the game.
