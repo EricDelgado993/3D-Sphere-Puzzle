@@ -5,6 +5,15 @@ This Unity project is a dynamic and engaging 3D puzzle game where players contro
 
 ---
 
+## 📂 **Project Files**
+- [GameManager.cs](https://github.com/EricDelgado993/3D-Sphere-Puzzle/blob/main/Assets/GameManager.cs)
+- [PitFall.cs](https://github.com/EricDelgado993/3D-Sphere-Puzzle/blob/main/Assets/PitFall.cs)
+- [PlayerController.cs](https://github.com/EricDelgado993/3D-Sphere-Puzzle/blob/main/Assets/PlayerController.cs)
+- [Stable.cs](https://github.com/EricDelgado993/3D-Sphere-Puzzle/blob/main/Assets/Stable.cs)
+- [vEnemy.cs](https://github.com/EricDelgado993/3D-Sphere-Puzzle/blob/main/Assets/vEnemy.cs)
+
+---
+
 ## Features
 
 ### Core Gameplay
