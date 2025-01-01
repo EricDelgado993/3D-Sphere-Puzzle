@@ -1,4 +1,5 @@
-# 3D Sphere Puzzle Game [Return to Portfolio](https://github.com/EricDelgado993/Portfolio)
+# 3D Sphere Puzzle Game
+# [Return to Portfolio](https://github.com/EricDelgado993/Portfolio)
 
 ## Overview
 This Unity project is a dynamic and engaging 3D puzzle game where players control a gold sphere to navigate a grid of colorful tiles. The objective is to turn all blue tiles green by rolling over them while avoiding hazards and enemies. The game features a score system, realistic physics, and interactive mechanics to challenge players' skills.
